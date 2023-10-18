@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static '/style/style.css' %}">
+    <title>Login</title>
+    
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form class='login-form'>
+        <h3>Login</h3>
+
+        <label for="username">Usuário</label>
+        <input type="text" placeholder="Nome de usuário" id="username">
+
+        <label for="password">Senha</label>
+        <input type="password" placeholder="*******" id="password">
+
+        <button>Entrar</button>
+        <div class="social">
+        <a href="{% url "google_login" %}" target="_blank">
+          <div class="go"><i class="fab fa-google"></i>Entrar com Google</div>
+        </a>
+        </div>
+    </form>
+</body>
+</html>

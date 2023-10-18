@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static '/style/style.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="nav-links">
+                <li class="nav-link">
+                    <a href="#">Início</a>
+                </li>
+                <li class="nav-link adoption">
+                    <a href="#">Quero Adotar
+                    <span class="material-icons dropdown-icon">
+                        arrow_drop_down
+                    </span>
+                </a>
+                <ul class="drop-down">   
+                    <li>Gatos</li>
+                    <li>Cachorros</li>
+                    <li>Adoções Especiais</li>
+                </ul> 
+                </li>
+                <li class="nav-link">
+                    <a href="#">Resgate</a>
+                </li>
+                <li class="nav-link">
+                    <a href="#">Contato</a>
+                </li>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
