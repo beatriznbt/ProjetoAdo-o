@@ -7,8 +7,10 @@ class LoginView(TemplateView):
 
     template_name = 'login.html'
 
-def login(request):
-    return render(request, 'login.html')
+    def get(self, request, *args, **kwargs):
+        if request.method == 'GET':
+            return render(request, self.template_name)
+
 class HomeView(TemplateView):
 
     template_name = 'home.html'
@@ -17,9 +19,9 @@ class RegisterView(TemplateView):
 
     template_name = 'register.html'
 
-    def register(request):
+    def get(self, request, *args, **kwargs):
         if request.method == 'GET':
-            return render(request, 'register.html')
+            return render(request, self.template_name)
 
 
 
