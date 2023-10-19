@@ -20,12 +20,6 @@ class RegisterView(TemplateView):
     def register(request):
         if request.method == 'GET':
             return render(request, 'register.html')
-        else:
-            username = request.POST.get('username')
-            password = request.POST.get('password')
-            email = request.POST.get('email')
-        
-            return RegisterView.as_view()(request)
 
 
 
