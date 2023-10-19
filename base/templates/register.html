@@ -1,6 +1,5 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,32 +8,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static '/style/style.css' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
-    <title>Login</title>
-    
+    <title>Registre-se</title>
+    <html lang="en">
 </head>
 <body>
     <div class="background">
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
+    <form action="{% url 'register' %}" method="POST"> {% csrf_token %}
     <div class='base-form'>
         <form class='login-form'>
-            <h3>Faça login para continuar</h3>
+            <h3>Criar conta</h3>
+            
+            
+                <label for="username">Usuário</label>
+                <input type="text" placeholder="Insira um nome de usuário" name="username">
+            
+                <label for="password">Senha</label>
+                <input type="password" placeholder="Insira uma senha de até 6 caracteres" name="password">
 
-            <label for="username">Usuário</label>
-            <input type="text" placeholder="Nome de usuário" id="username">
-
-            <label for="password">Senha</label>
-            <input type="password" placeholder="*******" id="password">
-            <h5>Não tem uma conta?  <a href={% url "register" %} class='register'>Registre-se aqui!</a></h5>
-        </form>
-
-        <div class="enter">Entrar</div>
-                <div class="social">
-                    <a href="{% url "google_login" %}" target="_blank">
-                    <div class="go"><i class="fab fa-google"></i> Entrar com Google</div>
-                    </a>
-                </div>
-    </div>
+                <label for="email">E-mail para contato</label>
+                <input type="email" placeholder="exemplo@gmail.com" name="email">
+            </form>
+            <input type="submit">Tudo pronto!
+        </div>
+    </form>
 </body>
 </html>
