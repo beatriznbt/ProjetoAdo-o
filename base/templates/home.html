@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Início</title>
+    <title>Adote um amigo</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
+    <link rel="icon" href="{% static '/images/dog.png' %}" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static '/images/dog.png' %}" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="{% static '/style/style.css' %}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
@@ -16,11 +17,13 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-dark">
         <div class="container-fluid">
-          <a class="navbar-brand text-light" href="#">MINHA LOGO</a>
+          <a class="navbar-brand text-light" href="#">
+            <img alt='logo' src="{% static "/images/dog.png" %}" height='58px'>
+          </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
             <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link active text-light" aria-current="page" href="#">Início</a>
@@ -52,54 +55,38 @@
                 <li class="nav-item">
                     <a class="nav-link text-light" href="#">Login</a>
                 </li>
-                {% endif %}
-
-                
+                {% endif %}              
             </ul>
           </div>
         </div>
       </nav>
-    
-    <!--
-      <div class="container">
-        <div class="navbar">
-            <div class="nav-links">
-                <li class="nav-link">
-                    <a href="#" >Início</a>
-                </li>
-                <li class="nav-link adoption">
-                    <a href="#">Quero Adotar
-                    <span class="material-icons dropdown-icon">
-                        arrow_drop_down
-                    </span>
-                </a>
-                <ul class="drop-down">   
-                    <li>Gatos</li>
-                    <li>Cachorros</li>
-                    <li>Adoções Especiais</li>
-                </ul> 
-                </li>
-                <li class="nav-link">
-                    <a href="#">Resgate</a>
-                </li>
-                <li class="nav-link">
-                    <a href="#">Contato</a>
-                </li>
-                <li class="nav-link">
-                    {% if user.is_authenticated %}
-                        {{ user.username }}
-                        <a href="{% url 'account_logout' %}">Logout</a>
-                    {% else %}
-                        <a href="{% url 'login' %}">Login</a>
-                    {% endif %}
-                </li>
-
-            </div>
+      <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-    </div>
--->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static "images/gato.jpg" %}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static "images/cachorro.jpg" %}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static "images/cute-baby-cat-1920x1080-wallpaper-12464.jpg" %}" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     
 </body>
 </html>
