@@ -4,6 +4,7 @@
 {% block head_title %}{% trans "Entrar com Google" %}{% endblock head_title %}
 
 {% block content %}
+<div class='google-auth'>
 {% if process == "connect" %}
 <h1>{% blocktrans with provider.name as provider %}Conectar {{ provider }}{% endblocktrans %}</h1>
 
@@ -18,4 +19,5 @@
   {% csrf_token %}
   <button type="submit">{% trans "Continuar" %}</button>
 </form>
+</div>
 {% endblock content %}

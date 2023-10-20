@@ -1,9 +1,10 @@
-from django.contrib import admin
+
 from django.urls import path, include
-from .views import LoginView, HomeView, RegisterView
+from .views import HomeView
+from django.views.generic import RedirectView
+
 
 urlpatterns = [
-    path('', LoginView.as_view(), name='login'),
+    path('', RedirectView.as_view(pattern_name='account_login')),
     path('home/', HomeView.as_view(), name='home'),
-    path('registrar/', RegisterView.as_view(), name='register'),
 ]

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static '/style/style.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <div class='base-form'>
+       <form class="login login-form" method="POST" action="{% url 'account_login' %}">
+            {% csrf_token %}
+            <input type="hidden" name="validthis">
+            <h3>Faça login para continuar</h3>
+
+            <label for="id_login">Usuário</label>
+            <input name="login" type="text" placeholder="Nome de usuário" id="id_login">
+
+            <label for="id_password">Senha</label>
+            <input name="password" type="password" placeholder="*******" id="id_password">
+            <h5>Não tem uma conta?  <a href={% url "account_signup" %} class='register'>Registre-se aqui!</a></h5>
+
+            <button type="submit" class="enter">Entrar</button>
+        </form>
+        
+        <div class="social">
+            <a href="{% url "google_login" %}" target="_blank">
+            <div class="go"><i class="fab fa-google"></i> Entrar com Google</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
